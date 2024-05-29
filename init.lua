@@ -257,6 +257,19 @@ require('lazy').setup({
       },
     },
   },
+  -- A vim-vinegar like file explorer that lets you edit your filesystem like a normal Neovim buffer.
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    config = true,
+    -- Optional dependencies
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+  -- A minimalist Neovim plugin that auto pairs & closes brackets written in 100% Lua.
+  {
+    'm4xshen/autoclose.nvim',
+    config = true,
+  },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
@@ -325,7 +338,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons', enabled = true },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -575,7 +588,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
         --
 
         lua_ls = {
@@ -885,7 +898,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
